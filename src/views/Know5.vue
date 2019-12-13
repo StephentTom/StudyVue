@@ -20,7 +20,7 @@
             // 在 beforeCreate() 中无法获取data() 与 methods 中的所定义的属性值 与 函数
         },
         created() {
-            // 在 created() 中 可获取 data() 与 methods 中的所定义的属性值 与 函数
+            // 在 created() 中 能获取 data() 与 methods 中的所定义的属性值 与 函数
         },
         beforeMount() {
             // 模板在内存中编辑完成, 但尚未渲染到页面中

@@ -1,24 +1,8 @@
 # hello-world
+```
+Vue CLI: https://cli.vuejs.org/zh/guide/
 
-## Project setup
-```
-yarn install
-```
+安装: https://cli.vuejs.org/zh/guide/installation.html
 
-### Compiles and hot-reloads for development
+创建: vue create hello-world
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -11,7 +11,7 @@
         <input class="form-control" type="text"/>
       </label>
 
-      <input class="btn btn-primary" type="button" value="添加">
+      <input class="btn btn-primary" type="button" value="添加" @click="add">
     </div>
   </div>
 
@@ -51,15 +51,31 @@
     components: {},
     data() {
       return {
-        list: [
-          {id: '1', name: '奥迪', ctime: new Date() },
-          {id: '2', name: '奔驰', ctime: new Date() }
-        ]
+        list: []
       };
     },
+    created() { // 此周期 data 与 methods 初始化完毕, 能获取到 属性 与 函数
+      this.getAllCars()
+    },
     methods: {
+      add() {
+
+      },
       deleted() {
-        console.log('deleted')
+        
+      },
+      getAllCars() {
+        axios.get('http://vue.studyit.io/api/getprodlist')
+        .then((response)=>{
+          if (response.status == 0) {
+            this.list = response.message
+          } else {
+            alert('获取数据失败')
+          }
+        })
+        .catch(error=>{
+
+        })
       }
     },
     mounted() {
