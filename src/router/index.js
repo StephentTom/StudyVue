@@ -69,6 +69,24 @@ const routes = [
     component: () => import('../views/Know7.vue')
   },
   {
+    path: '/know8',
+    name: 'know8',
+    // @ts-ignore
+    component: () => import('../views/Know8.vue')
+  },
+  {
+    path: '/know9',
+    name: 'know9',
+    // @ts-ignore
+    component: () => import('../views/Know9.vue')
+  },
+  {
+    path: '/know10',
+    name: 'know10',
+    // @ts-ignore
+    component: () => import('../views/Know10.vue')
+  },
+  {
     path: '/me',
     name: 'me',
     // @ts-ignore

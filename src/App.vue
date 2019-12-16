@@ -10,7 +10,11 @@
       <router-link to="/know4">Know4 过滤器</router-link> |
       <router-link to="/know5">Know5 生命周期</router-link> |
       <router-link to="/know6">Know6 vue-resource/axios请求</router-link> |
-      <router-link to="/know7">Know7 品牌Demo</router-link>
+      <router-link to="/know7">Know7 品牌Demo</router-link> |
+      <router-link to="/know8">Know8 Vue中的动画</router-link> |
+      <router-link to="/know9">Know9 使用第三方类动画</router-link> |
+      <router-link to="/know10">Know10 实现半场动画</router-link>
+      
       <router-view/>  
     </div>
   </div>
