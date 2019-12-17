@@ -1,9 +1,9 @@
 <template>
   <div class="know10">
     
-    <h1>使用钩子函数实现半场动画</h1>
+    <h1>使用钩子函数实现半场(前半段)动画</h1>
     
-    <input class="form-control" type="button" value="加入购物车" @click="flag=!flag">
+    <input class="form-control" type="button" value="加入购物车 实现半场动画" @click="flag=!flag">
 
     <!-- vue 提供的动画钩子 https://cn.vuejs.org/v2/guide/transitions.html#JavaScript-%E9%92%A9%E5%AD%90 -->
     <transition
@@ -32,14 +32,16 @@
     </div>
 
     <!-- 在实现列表过渡的时候, 是通过v-for循环渲染出来的, 不能transition包裹,
-    需要使用 transition-group -->
-    <ul>
-      <!-- 如果要为v-for 循环创建的元素, 添加动画, 则必须要为每个元素设置 :key -->
-      <transition-group>
+    需要使用 transition-group; 但 transition-group 会渲染成 span的标签, 因此利用tag属性 指定 transition-group 渲染为特定的标签 来避免-->
+
+    <!-- <ul> -->
+      <!-- <ul 如果要为v-for 循环创建的元素, 添加动画, 则必须要为每个元素设置 :key -->
+      <!-- appear属性: 给 transition-group 实现页面刚展示时的入场效果  -->
+      <transition-group appear tag="ul">
         <li v-for="(value, index) in list" :key="value.id" @click="deletedClick(index)">
         {{value.name}}</li>
       </transition-group>
-    </ul>
+    <!-- </ul> -->
 
     
   </div>
@@ -81,7 +83,7 @@
         el.offsetWidth // el.offsetHeight  / el.offsetLeft 等都会有效果
         // 动画开始之后的样式
         el.style.transform = 'translate(150px, 450px)';
-        el.style.transition = 'all 0.5s ease' // 中间过渡的效果
+        el.style.transition = 'all 1s ease' // 中间过渡的效果
 
         // 其实就是alterEnter这个函数, 也就是说: done是一个函数的引用; 对 afterEnter 的引用; 如果不调用 则会出现延迟动画
         done()
@@ -114,6 +116,7 @@
   }
 
   li {
+    width: 100%;
     border: 1px dashed #999;
     margin: 10px;
     padding-left: 10px;
@@ -133,6 +136,7 @@
     top: 2.5px;
   }
 
+  // 用于列表动画;  如果想看购物车红点动画, 则就注释掉以下代码
   .v-enter,
   .v-leave-to {
     opacity: 0;
@@ -142,6 +146,14 @@
   .v-enter-active,
   .v-leave-active {
     transition: all 1s ease-in // transition: 过渡效果
+  }
+
+  // 用于删除列表动画; .v-move 与 .v-leave-active 配合使用 实现列表元素渐渐飘上来的效果 固定写法
+  .v-move {
+    transition: all 0.3s ease-in-out
+  }
+  .v-leave-active {
+    position: absolute;
   }
 
 </style>

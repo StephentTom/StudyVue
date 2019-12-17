@@ -5,9 +5,12 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+
+
+// 重定向 redirect: { path: '/', redirect: '/login'} 重定向根路径为login界面路径
+const routes = [ 
   {
-    path: '/',
+    path: '/', // 根路径
     name: 'home',
     component: Home
   },
@@ -87,6 +90,30 @@ const routes = [
     component: () => import('../views/Know10.vue')
   },
   {
+    path: '/know11',
+    name: 'know11',
+    // @ts-ignore
+    component: () => import('../views/Know11.vue')
+  },
+  {
+    path: '/know12',
+    name: 'know12',
+    // @ts-ignore
+    component: () => import('../views/Know12.vue')
+  },
+  {
+    path: '/know13',
+    name: 'know13',
+    // @ts-ignore
+    component: () => import('../views/Know13.vue')
+  },
+  {
+    path: '/know14',
+    name: 'know14',
+    // @ts-ignore
+    component: () => import('../views/Know14.vue')
+  },
+  {
     path: '/me',
     name: 'me',
     // @ts-ignore
@@ -97,6 +124,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
+  // linkActiveClass: 'myActive',  // linkActiveClass的默认值就修改为 myActive
   routes
 })
 
