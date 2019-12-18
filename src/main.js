@@ -68,7 +68,9 @@ Vue.filter('setTime', (value, format="")=>{
 
 // @ts-ignore
 new Vue({
-  router,
+  router, // 路由对象挂载到 Vue实例上
   store,
-  render: h => h(App)
+  render: h => h(App) // render会把 el指定的容器中, 所有内容都清空覆盖, 所以 不要把 router-link 与 router-view 写到 el指定的容器中
 }).$mount('#app')
+
+// App这个组件 是通过 Vue实例的render函数 渲染出来的
