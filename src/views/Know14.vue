@@ -27,3 +27,11 @@
         },
     }
 </script>
+
+<style lang="scss" scoped>
+    body {
+        div {
+            font-style: italic;
+        }
+    }
+</style>

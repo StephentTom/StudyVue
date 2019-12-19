@@ -25,7 +25,9 @@
       <router-link to="/know13">Know13 获取DOM元素和组件</router-link> |
       <router-link to="/know14">Know14 路由的基本使用 App.vue router</router-link> |
       <router-link to="/know15">Know15 经典布局 练习</router-link> |
-      <router-link to="/know16">Know16 </router-link>
+      <router-link to="/know16">Know16 </router-link> |
+      <router-link to="/know17">Know17 </router-link>
+      
       
       
       <!-- 由 vue-router 提供的元素, 专门用来当作占位符, 将来 路由规则 匹配到的组件 就会展示到这个 route-view 中去; 所以, 可以把 router-view 认为是一个占位符-->
@@ -47,13 +49,13 @@
 
     watch: {
       // 监听路由的改变
-      $route(to , from) {
-        console.log(to, from)
-      },
+      // $route(to , from) {
+      //   console.log(to, from)
+      // },
 
-      '$route.path': function(newVal, oldVal) {
-        console.log(newVal, oldVal)
-      }
+      // '$route.path': function(newVal, oldVal) {
+      //   console.log(newVal, oldVal)
+      // }
     }
   }
 </script>

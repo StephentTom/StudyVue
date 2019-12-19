@@ -156,6 +156,12 @@ const routes = [
     component: () => import('../views/Know16.vue')
   },
   {
+    path: '/know17',
+    name: 'know17',
+    // @ts-ignore
+    component: () => import('../views/Know17.vue')
+  },
+  {
     path: '/me',
     name: 'me',
     // @ts-ignore
